@@ -1,301 +1,320 @@
-/****************************OUTSEIDE OF CARD*************************/
+/****************************OUTSIDE OF CARD*************************/
 
 body {
-    margin: 0px;
-    font-family: 'Inter';
-    font-style: normal;
-    background-color: #F5F5F5;
-    height: 100vh;
+  margin: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  background-color: #f5f5f5;
+  height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: scale(2);
-    transition: 500ms ease-in-out;    
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(2);
+  transition: 250ms ease-in-out;
+  transform: scale(2);
+  opacity: 1;
+  animation-duration: 1s;
+  animation-name: animate-logo;
+  animation-delay: 0.5s;
+  z-index: 99;
 }
 
 .logo-after {
-    position: absolute;
+  position: absolute;
+  top: 80px;
+  left: 77px;
+  transform: scale(1);
+  cursor: pointer;
+  z-index: 99;
+}
+
+@keyframes animate-logo {
+  0% {
+    transform: scale(2);
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    transform: scale(1);
     top: 80px;
     left: 77px;
-    transform: scale(1);
-    cursor: pointer;
+  }
 }
 
 .sign-up-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    position: absolute;
-    top: 67px;
-    right: 114px;
+  position: absolute;
+  top: 67px;
+  right: 114px;
 
-    transition: ease-in-out 500ms;
+  transition: ease-in-out 500ms;
 }
 
 .sign-btn {
-    font-size: 16px !important;
-    width: 91px !important;
-    height: 51px !important;
-    margin-left: 35px;
+  font-size: 16px !important;
+  width: 91px !important;
+  height: 51px !important;
+  margin-left: 35px;
 }
 
 .dark-btn {
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 120%;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 120%;
 
-    width: 145px;
-    height: 51px;
+  width: 145px;
+  height: 51px;
 
-    color: #FFFFFF;
-    background-color: #2A3647;
+  color: #ffffff;
+  background-color: #2a3647;
 
-    border-radius: 8px;
-    border: none;
+  border-radius: 8px;
+  border: none;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dark-btn:hover {
-    background-color: #29ABE2;
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  background-color: #29abe2;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .bright-btn {
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 120%;
-    width: 161px;
-    height: 51px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 120%;
+  width: 161px;
+  height: 51px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    color: #2A3647;
-    background-color: #FFFFFF;
+  color: #2a3647;
+  background-color: #ffffff;
 
-    border-radius: 8px;
-    border: 1px solid #2A3647;
+  border-radius: 8px;
+  border: 1px solid #2a3647;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .blue-arrow {
-    position: absolute;
-    top: 35px;
-    left: 31px;
-    cursor: pointer;
+  position: absolute;
+  top: 35px;
+  left: 31px;
+  cursor: pointer;
 }
 
 .bright-btn:hover {
-    color: #29ABE2;
-    border: 1px solid #29ABE2;
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  color: #29abe2;
+  border: 1px solid #29abe2;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    width: 652px;
-    height: 513px;
-    gap: 35px;
+  width: 652px;
+  height: 513px;
+  gap: 35px;
 
-    background-color: #FFFFFF;
-    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
-    border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 30px;
 
-    transition: ease-in-out 500ms; 
+  transition: ease-in-out 500ms;
 }
 
 .text {
-    font-size: 21px;
-    line-height: 120%;
-    text-align: center;
-    margin: 0px;
+  font-size: 21px;
+  line-height: 120%;
+  text-align: center;
+  margin: 0px;
 }
 
 .opacity-zero {
-    opacity: 0 !important;
+  opacity: 0 !important;
 }
 
-/****************************OUTSIDE OF CARD*************************/
+/****************************OUTSIDE OF CARD ENDS*************************/
 
 /****************************LOGIN SECTION*************************/
 
 h1 {
-    font-weight: 700;
-    font-size: 61px;
+  font-weight: 700;
+  font-size: 61px;
 
-    line-height: 120%;
-    margin: 0px;
-    height: 64px;
+  line-height: 120%;
+  margin: 0px;
+  height: 64px;
 }
 
 .underline {
-    width: 150px;
-    border-top: 3px solid #29ABE2;
-    border-radius: 3px;
+  width: 150px;
+  border-top: 3px solid #29abe2;
+  border-radius: 3px;
 }
 
 .card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
 }
 
 .all-inputfields {
-    display: flex;
-    flex-direction: column;
-    gap: 49px;
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
 }
 
 .inputfield {
-    box-sizing: border-box;
-    position: relative;
+  box-sizing: border-box;
+  position: relative;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding: 13px 21px;
+  padding: 13px 21px;
 
-    width: 422px;
-    height: 51px;
+  width: 422px;
+  height: 51px;
 
-    border: 1px solid #D1D1D1;
-    border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
 }
 
 .input {
-    width: 335px;
-    height: 45px;
-    border: none;
+  width: 335px;
+  height: 45px;
+  border: none;
 
-    font-family: 'Inter';
-    font-size: 21px;
-
+  font-family: "Inter";
+  font-size: 21px;
 }
 
 .input:focus {
-    outline: none;
+  outline: none;
 }
 
 .input::placeholder {
-    font-size: 21px;
-    color: #D1D1D1;
+  font-size: 21px;
+  color: #d1d1d1;
 }
 
 .wrong-input {
-    position: absolute;
-    top: 55px;
-    left: 0px;
-    color: red;
-    font-size: 13px;
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  color: red;
+  font-size: 13px;
 }
 
 .memorie-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    gap: 35px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 35px;
 }
 
 .remember-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .remember-checkbox {
-    cursor: pointer;
-    transform: scale(1.2);
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .forgot-password {
-    color: #29ABE2;
-    text-decoration: none;
+  color: #29abe2;
+  text-decoration: none;
 }
 
 .login-button-container {
-    display: flex;
-    gap: 35px;
+  display: flex;
+  gap: 35px;
 }
 
-/****************************LOGIN SECTION*************************/
+/****************************LOGIN SECTION ENDS*************************/
 
 /****************************SIGN UP SECTION*************************/
 
 .sign-up-card {
-    height: 559px;
-    position: relative;
+  height: 559px;
+  position: relative;
 }
 
-/****************************SIGN UP SECTION*************************/
+/****************************SIGN UP SECTION ENDS*************************/
 
 /****************************FORGOT SECTION*************************/
 
 .forgot-card {
-    position: relative;
-    width: 826px;
-    height: 462px;
+  position: relative;
+  width: 826px;
+  height: 462px;
 }
 
 .mail-continue-btn {
-    width: 264px;
-    margin-top: 20px;
+  width: 264px;
+  margin-top: 20px;
 }
 
-/****************************FORGOT SECTION*************************/
+/****************************FORGOT SECTION ENDS*************************/
 
 /****************************RESET SECTION*************************/
 
 .reset-card {
-    position: relative;
-    width: 826px;
-    height: 537px;
+  position: relative;
+  width: 826px;
+  height: 537px;
 }
 
-/****************************RESET SECTION*************************/
+/****************************RESET SECTION ENDS*************************/
 
 /********************************************************************/
 
 .success-btn {
-    font-weight: 400;
-    font-size: 23px;
+  font-weight: 400;
+  font-size: 23px;
 
-    width: 326px;
-    height: 74px;
+  width: 326px;
+  height: 74px;
 
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    border: none;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  border: none;
 }
 
 .mail-sent-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    
-    font-weight: 400;
-    font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 
-    width: 424px;
-    height: 74px;
+  font-weight: 400;
+  font-size: 23px;
 
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    border: none;
+  width: 424px;
+  height: 74px;
+
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  border: none;
 }
