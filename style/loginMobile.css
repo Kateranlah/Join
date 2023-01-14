@@ -216,8 +216,8 @@
     bottom: 0px;
     background-color: #2a3647;
     animation-name: animate-fade;
-    animation-duration: 1.5s;
-    animation-delay: 2;
+    animation-duration: 2s;
+    animation-delay: 1s;
   }
 
   @keyframes animate-fade {
