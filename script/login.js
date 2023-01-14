@@ -118,7 +118,7 @@ function defineInputVariables() {
  */
 async function initIndexHTML() {
     if (firstLoadOfPage()) {
-        setTimeout(startAnimation, 500);
+        setTimeout(startAnimation, 900);
         localStorage.setItem('First load of index.html', 'loaded index.html already')
     } else {
         noAnimation();
