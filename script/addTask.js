@@ -29,7 +29,7 @@ async function init() {
 /**
  * Backend Functions
 */
-setURL('kevin-sven-lentz.developerakademie.net/smallest_backend_ever');
+setURL('https://kevin-sven-lentz.developerakademie.net/smallest_backend_ever');
 
 async function loadData() {
     await downloadFromServer();

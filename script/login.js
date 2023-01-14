@@ -1,4 +1,4 @@
-setURL('kevin-sven-lentz.developerakademie.net/smallest_backend_ever');
+setURL('https://kevin-sven-lentz.developerakademie.net/smallest_backend_ever');
 
 let users = [];
 let username;
