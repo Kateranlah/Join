@@ -405,7 +405,7 @@ function renderEditHTML() {
             </div>
     
             <div class="pop-up-inputfield">
-                <input id="editPhone" class="pop-up-input" type="tel" placeholder="Phone"
+                <input id="editPhone" class="pop-up-input" type="number" placeholder="Phone"
                     title="Change phone number">
                 <img src="./assets/phone.svg">
             </div>
