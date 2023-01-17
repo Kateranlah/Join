@@ -385,7 +385,7 @@ ul {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 1000;
 }
 
 .mobile-btn-container {
@@ -440,7 +440,6 @@ ul {
   .forms {
     flex-direction: column;
     justify-content: unset;
-    margin-top: 170px;
     margin-bottom: 100px;
   }
 
@@ -500,9 +499,10 @@ ul {
   }
 
   #headline {
-    position: relative;
-    top: 5px;
-    left: -5%;
+  position: relative;
+  margin-top: 100px;
+  margin-left: -100px;
+
   }
 
   #close {
