@@ -200,7 +200,6 @@ function startMobileAnimation() {
     document.getElementById('logo-mobile').classList.add('mobile-logo-after');
     document.getElementById('card').classList.remove('opacity-zero');
     document.getElementById('sign-up-mobile').classList.remove('opacity-zero');
-
     document.getElementById('logo-mobile-cover').classList.add('mobile-logo-after');
     document.getElementById('screen-cover').classList.add('opacity-zero');
     setTimeout(removeScreenCover, 500);
@@ -428,7 +427,10 @@ function emailAlreadyExists() {
  * function creats a new user with input from sin_up.html and saves him on backend 
  */
 async function createNewUser() {
-    users.push({ username: username.value, email: email.value, password: password.value, epics: epicsArray, contacts: contacts = [] });
+    users.push({ username: username.value, email: email.value, password: password.value, epics: epicsArray, contacts: contacts = [  {
+        "name": "Not Assigned",
+        "color": "black"
+    },] });
     await backend.setItem('users', JSON.stringify(users));
     window.location.href = 'index.html?msg=Du hast dich erfolgreich registriert!';
 }
