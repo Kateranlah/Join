@@ -74,7 +74,7 @@ function renderSubtaskBarHTML(id, task, done, barProgress) {
 function renderSubtaskHTML(name, i, id) {
   openCardSubtasks;
   return /* html*/ `
-    <div class="d-flex-gap-20"><input id="subtaskCheckbox${i}" class="checkbox" type="checkbox" onclick="taskIsDone('${i + id
+    <div class="d-flex-gap-20"><input id="subtaskCheckbox${i}" class="boardCheckbox" type="checkbox" onclick="taskIsDone('${i + id
     }')"><div class="subtask-titel">${name}</div>`;
 }
 

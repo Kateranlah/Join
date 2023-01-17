@@ -11,6 +11,8 @@ let y = window.matchMedia("(max-width: 1080px)");
 x.addListener(checkWitdh);
 let dummysPrinted = false;
 let kanbanCategorys = ["todo", "progress", "feedback", "done"];
+let savedSubTasks = "";
+let statusSubtask = [];
 
 /**
  * This function is used to start all functions included by visiting the webpage
@@ -281,7 +283,7 @@ function getAssignedContact(task) {
     const color = task["assignedTo"][i]["color"];
 
     const firstLetters = fullContact.match(/\b(\w)/g);
-    const initials = firstLetters.join('');
+    const initials = firstLetters.join("");
 
     // contact = fullContact.split(" ");
     // const sureName = contact[0];
@@ -485,9 +487,13 @@ function openCardEdit(id) {
   renderCategorySelector();
   renderContactSelector();
   fillAllInputs(id);
+  saveSubtask(id);
   removeKanbanOnPhone();
 }
 
+function saveSubtask(id) {
+  savedSubTasks = findTaskById(id).subtasks;
+}
 /**
  * This function shows the addtask template
  *
@@ -501,7 +507,7 @@ function showAddTask(category) {
   renderContactSelector();
 }
 
-  //oberhalb code von steven für die responsive ansicht des templates
+//oberhalb code von steven für die responsive ansicht des templates
 
 function showTemplateToAddTask(category) {
   document.getElementById("fullscreen").style.display = "block";
@@ -648,8 +654,56 @@ function updateTask(id) {
   task.dueDate = document.getElementById("dueDate").value;
   task.assignedTo = assignedContacts;
   task.prio = returnPrioState();
-  task.subtasks = getSubtasks();
+  helpUpdateSubtask(task, id);
   updateEpic(task, id);
+}
+
+/**
+ * This function will
+ * 1) Delete unticked task in the edit view
+ * 2) Will push all Names of checked subtasks in array
+ * 3) uses said array to check if tasks exists which where ticked before on taskcard
+ * and ticks them again
+ *
+ * @param {object} task
+ */
+
+function helpUpdateSubtask(task) {
+  task.subtasks = getSubtasks();
+  saveCheckedStatus();
+  renewCheckedStatus(task);
+}
+
+/**
+ *
+ * This function pushes all subtask which are checked (done) into an array of names
+ */
+
+function saveCheckedStatus() {
+  savedSubTasks.forEach((e) => {
+    if (e.checked) {
+      statusSubtask.push(e.name);
+    }
+  });
+}
+
+/**
+ *
+ * This function checkes if the Updated Subtask still containe the cheked (done) tasks and
+ * ticks them back to checked if they are
+ *
+ *  * @param {object} task
+ */
+
+function renewCheckedStatus(task) {
+  getSubtasks().forEach((e) => {
+    let i = 0;
+
+    if (statusSubtask.includes(e.name)) {
+      task.subtasks[i].checked = true;
+    }
+    i++;
+  });
 }
 
 /**

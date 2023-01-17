@@ -23,7 +23,8 @@ async function init() {
     renderContactSelector();
     colorPicker('ocean'); //set default color
     setDateOfToday();
-    document.getElementById('fullscreen').style.display = 'block';
+    if(document.getElementById('fullscreen')){   document.getElementById('fullscreen').style.display = 'block';}
+ 
 }
 
 /**
@@ -454,6 +455,7 @@ function addContactToArray(checkbox) {
     const name = document.getElementById(`contact-${id}`).innerText;
     const color = document.getElementById(`contact-${id}`).getAttribute('data-color');
     assignedContacts.push(contactTemplate(name, color));
+  
 }
 
 function contactTemplate(name, color) {
@@ -682,7 +684,7 @@ function addSubtaskContainerTemplate() {
 function subtasklistTemplate(subtask, id) {
     return /*html*/ `
         <div>
-            <input checked="true" type="checkbox" id="subCheck-${id}" class="subtaskCheckbox">
+            <input onclick="alert('delete')" checked="true" type="checkbox" id="subCheck-${id}" class="subtaskCheckbox">
             <span id="subtask-${id}">${subtask}</span>
         </div>
     `

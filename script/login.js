@@ -427,7 +427,7 @@ function emailAlreadyExists() {
  * function creats a new user with input from sin_up.html and saves him on backend 
  */
 async function createNewUser() {
-    users.push({ username: username.value, email: email.value, password: password.value, epics: epicsArray, contacts: exampleContacts });
+    users.push({ username: username.value, email: email.value, password: password.value, epics: epicsArray, contacts: contacts = [] });
     await backend.setItem('users', JSON.stringify(users));
     window.location.href = 'index.html?msg=Du hast dich erfolgreich registriert!';
 }
