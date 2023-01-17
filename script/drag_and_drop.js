@@ -669,8 +669,8 @@ function updateTask(id) {
  */
 
 function helpUpdateSubtask(task) {
-  task.subtasks = getSubtasks();
   saveCheckedStatus();
+  task.subtasks = getSubtasks();
   renewCheckedStatus(task);
 }
 
@@ -685,6 +685,7 @@ function saveCheckedStatus() {
       statusSubtask.push(e.name);
     }
   });
+  savedSubTasks = "";
 }
 
 /**
@@ -696,14 +697,14 @@ function saveCheckedStatus() {
  */
 
 function renewCheckedStatus(task) {
-  getSubtasks().forEach((e) => {
-    let i = 0;
+  for (let i = 0; i < getSubtasks().length; i++) {
+    const e = getSubtasks()[i];
 
     if (statusSubtask.includes(e.name)) {
       task.subtasks[i].checked = true;
     }
-    i++;
-  });
+  }
+  statusSubtask = [];
 }
 
 /**

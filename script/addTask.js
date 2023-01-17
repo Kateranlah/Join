@@ -684,7 +684,7 @@ function addSubtaskContainerTemplate() {
 function subtasklistTemplate(subtask, id) {
     return /*html*/ `
         <div>
-            <input onclick="alert('delete')" checked="true" type="checkbox" id="subCheck-${id}" class="subtaskCheckbox">
+            <input checked="true" type="checkbox" id="subCheck-${id}" class="subtaskCheckbox">
             <span id="subtask-${id}">${subtask}</span>
         </div>
     `
