@@ -15,10 +15,13 @@ const colors = [
     'yellow',
     'ocean'
 ];
+let windowWidth = window.matchMedia("(max-width: 1080px)");
+windowWidth.addListener(checkWitdh);
 
 async function init() {
     await loadData();
     setUser();
+    checkWitdh();
     renderCategorySelector();
     renderContactSelector();
     colorPicker('ocean'); //set default color
@@ -26,6 +29,17 @@ async function init() {
     if(document.getElementById('fullscreen')){   document.getElementById('fullscreen').style.display = 'block';}
  
 }
+
+function checkWitdh() {
+    if (windowWidth.matches) {
+        document.getElementById("logout-image").classList.add('d-none');
+        document.getElementById("mobile-logo").classList.add('d-none');
+    }else{
+        document.getElementById("logout-image").classList.remove('d-none');
+        document.getElementById("mobile-logo").classList.remove('d-none');
+    }
+  }
+
 
 /**
  * Backend Functions

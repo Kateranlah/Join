@@ -500,9 +500,9 @@ ul {
   }
 
   #headline {
-    position: absolute;
-    top: 90px;
-    left: 5%;
+    position: relative;
+    top: 5px;
+    left: -5%;
   }
 
   #close {
@@ -582,5 +582,6 @@ ul {
   h1 {
     padding: 5px;
     font-size: 50px;
+    left: 0 !important;
   }
 }

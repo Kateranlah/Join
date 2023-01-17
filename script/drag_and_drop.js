@@ -507,7 +507,7 @@ function showAddTask(category) {
   renderContactSelector();
 }
 
-//oberhalb code von steven für die responsive ansicht des templates
+
 
 function showTemplateToAddTask(category) {
   document.getElementById("fullscreen").style.display = "block";
