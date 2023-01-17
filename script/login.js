@@ -155,7 +155,7 @@ function noAnimation() {
 function giveAllElementsNoTransition(animationElements) {
     for (let i = 0; i < animationElements.length; i++) {
         const element = animationElements[i];
-        document.getElementById(element).style = 'transition: 0ms;';
+        document.getElementById(element).style = 'transition: 250ms;';
     }
 }
 
@@ -204,6 +204,7 @@ function startMobileAnimation() {
     document.getElementById('logo-mobile-cover').classList.add('mobile-logo-after');
     document.getElementById('screen-cover').classList.add('opacity-zero');
     setTimeout(removeScreenCover, 500);
+    
 }
 
 
