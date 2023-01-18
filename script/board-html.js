@@ -1,10 +1,8 @@
 /**
  * This function is used to render the tasks on board.html
- *
  * @param {object} task
  * @param {object} epic
  */
-
 function renderTask(task, epic) {
   return /*html*/ `
       <div onclick="openCard('${task["id"]}')" draggable="true" ondragstart="startDragging('${task["id"]}')" class="task-card">
@@ -22,11 +20,9 @@ function renderTask(task, epic) {
 
 /**
  * This function is used to render the tasks on the opened card board.html
- *
  * @param {object} task
  * @param {object} epic
  */
-
 function renderTaskCard(task, epic) {
   return /*html*/ `
       <div onclick="dontClose(event)" id="edit-area" class="task-card" style="cursor: context-menu;">
@@ -45,11 +41,9 @@ function renderTaskCard(task, epic) {
    <img onclick="closeCard('${task["id"]}')" class="close-btn" src="assets/close.svg"</img>
   <img onclick="openCardEdit('${task["id"]}')" class="edit-btn" src="assets/pencil-filled-square.svg"</img>`;
 }
-/*<span class="underlined" >Subtasks</span>*/
 
 /**
  * This function renders the progressbar of the subtasks
- *
  * @param {string} id
  * @param {object} task
  * @param {number} done
@@ -57,31 +51,30 @@ function renderTaskCard(task, epic) {
  */
 function renderSubtaskBarHTML(id, task, done, barProgress) {
   document.getElementById("subtasks" + id).innerHTML = `
-        <div class="bar" style="background-image:  linear-gradient(to right, #29ABE2 ${barProgress}%,#29ABE2 ${barProgress / 100
-    }px, #f4f4f4 0%)"></div><span class="fw-700">${done}/${task["subtasks"].length
-    } Done</span>`;
+        <div class="bar" style="background-image:  linear-gradient(to right, #29ABE2 ${barProgress}%,#29ABE2 ${
+    barProgress / 100
+  }px, #f4f4f4 0%)"></div><span class="fw-700">${done}/${
+    task["subtasks"].length
+  } Done</span>`;
 }
 
 /**
  * This function renders the subtasks
- *
  * @param {string} name of the subtask
  * @param {number} i is the place of the subtask which is given to an onlick function
  * @param {string} id
- *
  */
-
 function renderSubtaskHTML(name, i, id) {
   openCardSubtasks;
   return /* html*/ `
-    <div class="d-flex-gap-20"><input id="subtaskCheckbox${i}" class="boardCheckbox" type="checkbox" onclick="taskIsDone('${i + id
-    }')"><div class="subtask-titel">${name}</div>`;
+    <div class="d-flex-gap-20"><input id="subtaskCheckbox${i}" class="boardCheckbox" type="checkbox" onclick="taskIsDone('${
+    i + id
+  }')"><div class="subtask-titel">${name}</div>`;
 }
 
 /**
  * This function is used to render the assigned people on board.html
  * The function will happen after renderTask, because its rendered in a tenplate.
- *
  * @param {object} task to find the spot where it is rendered
  * @param {string} contactInitials
  */
@@ -92,13 +85,10 @@ function renderAssignedContactsHTML(contactInitials, task, color) {
 
 /**
  * This function is used to render the assigned people on the openedCard
- *
  * @param {string} contactInitials
  * @param {object} task to find the spot where it is rendered
  * @param {string} contactName
- *
  */
-
 function renderCardContactsHTML(contactInitials, task, contactName, color) {
   document.getElementById("assignedCard" + task["id"]).innerHTML += `
    <div class="d-flex-gap-20"><div class="contact-on-card ${color}">${contactInitials}</div><span class="contact-name">${contactName}</span></div>  `;
@@ -106,11 +96,9 @@ function renderCardContactsHTML(contactInitials, task, contactName, color) {
 
 /**
  * This function renders the assigned people on the editCard
- *
  * @param {string} contact
  * @param {object} task
  */
-
 function renderEditContactsHTML(contactInitials, task, color) {
   document.getElementById("edit-assignedTo").innerHTML += `
     <div class="contact  ${color}">${contactInitials}</div>`;
@@ -118,7 +106,6 @@ function renderEditContactsHTML(contactInitials, task, color) {
 /**
  * This function removes the searchbar and puts it in Desktop view and changes the wording of the Addtask-Button
  * On board.html
- *
  */
 function renderDesktopView() {
   document.getElementById("btn-add-task").innerHTML = "";
@@ -132,7 +119,6 @@ function renderDesktopView() {
 /**
  * This function removes the searchbar and puts it in Mobile view and removes the wording of the Addtask-Button
  * On board.html
- *
  */
 function renderMobileView() {
   document.getElementById("btn-add-task").innerHTML = "";
@@ -145,11 +131,9 @@ function renderMobileView() {
 
 /**
  * This function is the HTML needed to render a placeholder in the kanban
- *
  * @param {string} category is given so the placeholder has his own ID
  * @returns PlaceholderHTML
  */
-
 function placeholderCardHTML(category) {
   return `<div class="dummy-card" id="dummy-card${category}-tasks">
     <div>
@@ -158,30 +142,11 @@ function placeholderCardHTML(category) {
 }
 
 /**
- * This function is the HTML needed to render the card which asks if you wanna delete the task
- *
- *
- * @param {string}
- * @returns askDeleteHTML
- */
-
-function askDeleteHTML(id) {
-  return `
-  <div onclick="dontClose(event)" class="task-card f-end">
-    <h2>Are you sure you wanna delete this task?</h2>
-    <div class="d-flex-gap-20"> <div onclick="deleteTask('${id}')" class="button" id="delete">Delete</div><div onclick="closeCard()" class="button" id="createTask">Keep</div></div>
-  </div>
-`;
-}
-
-/**
  * This function manipulates the html so the card opens.
- *
  * @param {string} id
  * @param {object} epic
  * @param {object} task
  */
-
 function openCardHTML(id, epic, task) {
   document
     .getElementById("opened-card-container")
@@ -195,9 +160,7 @@ function openCardHTML(id, epic, task) {
 
 /**
  * This functions closes the card
- *
  */
-
 function closeCardHTML() {
   document.getElementById("fullscreen").style.display = "none";
   document.getElementById("opened-card-container").classList.add("d-none");
@@ -205,11 +168,9 @@ function closeCardHTML() {
 
 /**
  * This function retruns the editTaskCard
- *
  * @param {string} id
  * @returns
  */
-
 function editTaskHTML(id) {
   return /* html */ `
 
@@ -303,4 +264,15 @@ function editTaskHTML(id) {
   </div>
 
   `;
+}
+
+/**
+ * This function renders the amount of extra contacts, which has to be shown.
+ * @param {object} task
+ */
+function printExtraContact(task) {
+  let extraContacts = "+" + (task["assignedTo"].length - 2);
+  document.getElementById("assigned" + task["id"]).innerHTML += `
+    <div class="extra-contact contact">${extraContacts}</div>`;
+  printExtraContactOnes = false;
 }
