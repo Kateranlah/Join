@@ -316,11 +316,13 @@ h2 {
   top: 0;
   right: 10px;
   padding: 20px;
+  cursor: pointer;
 }
 
 .edit-btn {
   padding: 20px;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -523,7 +525,7 @@ h2 {
     position: absolute;
     top: 80px;
     height: calc(100vh - 160px);
-    overflow: scroll;
+    overflow: auto;
     width: 90%;
     padding: 0px;
     padding-top: 20px;

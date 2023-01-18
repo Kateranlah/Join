@@ -29,7 +29,7 @@ function renderTask(task, epic) {
 
 function renderTaskCard(task, epic) {
   return /*html*/ `
-      <div onclick="dontClose(event)" id="edit-area" class="task-card">
+      <div onclick="dontClose(event)" id="edit-area" class="task-card" style="cursor: context-menu;">
       <span style="transform: scale(0.8); position: relative; right: 15px;" class="epic ${epic["color"]}">${epic["name"]}</span>
       <h4 class="task-name">${task["title"]}</h4>
       <p class="task-description">${task["description"]}</p>
