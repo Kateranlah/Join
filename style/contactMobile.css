@@ -99,7 +99,7 @@
         margin: 0px;
         width: 90%;
         height: calc(100vh - 160px);
-        overflow: scroll;
+        overflow: auto;
     }
 
     .mobile-entrie {

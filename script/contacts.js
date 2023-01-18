@@ -216,7 +216,8 @@ function showContactEntrie(name) {
  * function hides list on mobile devices, so that contact entrie can be seen
  */
 function checkForMobileView() {
-    if (screen.width <= 1080) {
+ console.log(screen);
+    if (window.innerWidth <= 1080) {
         document.getElementById('contactEntrie').classList.remove('mobile-entrie');
         document.getElementById('list').classList.add('d-none');
         document.getElementById('add-btn').classList.add('d-none');
