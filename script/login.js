@@ -451,7 +451,7 @@ function checkIfEmailExists() {
     let user = emailAlreadyExists();
     if (user) {
         saveUserInLocalStorage(user);
-        goToPesetPage()
+        goToResetPage()
     } else {
         clearAllInput();
         wrongEmail();
@@ -488,6 +488,7 @@ async function createNewPassword() {
  * @param {any} secondPassword 
  */
 function confirmTheNewPassword(user, firstPassword, secondPassword) {
+  
     if (firstPassword == secondPassword) {
         switchOldWithNewPassword(user, firstPassword);
     } else {
@@ -514,7 +515,7 @@ async function switchOldWithNewPassword(user, firstPassword) {
 /**
  * function leads to success_reset.html
  */
-function goToPesetPage() {
+function goToResetPage() {
     window.location.href = 'reset.html?msg=Bitte erstelle ein neues Passwort!';
 }
 
