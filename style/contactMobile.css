@@ -162,7 +162,7 @@
         height: 90%;
         flex-direction: column;
         position: relative;
-        overflow: scroll;
+        overflow: auto;
     }
 
     .mobile-pop-up-cross {
